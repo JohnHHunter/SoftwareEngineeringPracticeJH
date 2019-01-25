@@ -35,12 +35,17 @@ public class BankAccount {
     }
 
 
+    //A valid email address:
+    //(at least one character) + @ + (at least one character) + . + (at least one character)
     public static boolean isEmailValid(String email){
-        if (email.indexOf('@') == -1){
+        if (email.indexOf('@') < 1){
             return false;
         }
-        else {
-            return true;
+        int indexOAtSym = email.indexOf('@');
+        if (email.indexOf('.') < indexOAtSym + 1){
+            return false;
         }
+
+        return true;
     }
 }
