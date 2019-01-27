@@ -42,10 +42,13 @@ public class BankAccount {
             return false;
         }
         int indexOAtSym = email.indexOf('@');
-        if (email.indexOf('.') < indexOAtSym + 1){
+        if (email.lastIndexOf('@') != indexOAtSym){
             return false;
         }
 
+        if (email.indexOf('.') < indexOAtSym + 2){
+            return false;
+        }
         return true;
     }
 }
