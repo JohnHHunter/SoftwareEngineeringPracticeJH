@@ -31,12 +31,12 @@ public class BankAccount {
      */
     public void withdraw (double amount)  {
         balance -= amount;
-
     }
 
-
-    //A valid email address:
-    //(at least one character) + @ + (at least one character) + . + (at least one character)
+    /**
+     * A valid email address:
+     * (at least one character) + @ + (at least one character) + . + (at least one character)
+     */
     public static boolean isEmailValid(String email){
         if (email.indexOf('@') < 1){
             return false;
