@@ -28,9 +28,13 @@ public class BankAccount {
 
     /**
      * @post reduces the balance by amount if amount is non-negative and smaller than balance
+     *  If the withdraw amount is > the current balance, the balance will be set to 0
      */
     public void withdraw (double amount)  {
-        balance -= amount;
+        if(amount < balance)
+            balance -= amount;
+        else
+            balance = 0;
     }
 
     /**
