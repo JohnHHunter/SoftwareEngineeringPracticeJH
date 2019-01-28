@@ -59,7 +59,22 @@ public class BankAccount {
     /**
      * A valid amount is positive with two or less decimal places
      */
-    public static boolean isAmountValid(double amount){
-        return false;
+    public static boolean isAmountValid(double amount) {
+        //check if negative
+        if (amount < 0)
+            return false;
+
+        String amountStr = Double.toString(amount);
+
+        //check if no decimal point
+        if(amountStr.indexOf('.') == -1)
+            return true;
+
+        //check if 1 or 2 decimal places
+        String decimals = amountStr.substring(amountStr.indexOf('.'), amountStr.length());
+
+        if(decimals.length() > 3)
+            return false;
+        return true;
     }
 }
