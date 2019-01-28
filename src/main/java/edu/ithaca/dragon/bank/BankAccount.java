@@ -55,4 +55,11 @@ public class BankAccount {
         }
         return true;
     }
+
+    /**
+     * A valid amount is positive with two or less decimal places
+     */
+    public static boolean isAmountValid(double amount){
+        return false;
+    }
 }

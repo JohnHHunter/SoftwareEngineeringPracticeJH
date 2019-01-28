@@ -9,7 +9,6 @@ class BankAccountTest {
     @Test
     void getBalanceTest() {
         BankAccount bankAccount = new BankAccount("a@b.com", 200);
-
         assertEquals(200, bankAccount.getBalance());
     }
 
@@ -36,6 +35,20 @@ class BankAccountTest {
         assertFalse(BankAccount.isEmailValid(".@asd"));
         assertFalse(BankAccount.isEmailValid("a.a@a"));
         assertFalse(BankAccount.isEmailValid("a@a@a.a"));
+    }
+
+    @Test
+    void isAmountValidTest(){
+        assertTrue(BankAccount.isAmountValid(100.00));
+        assertTrue(BankAccount.isAmountValid(1.11));
+        assertTrue(BankAccount.isAmountValid(0.00));
+        assertTrue(BankAccount.isAmountValid(0.0));
+        assertTrue(BankAccount.isAmountValid(10));
+        assertTrue(BankAccount.isAmountValid(10.1));
+        assertFalse(BankAccount.isAmountValid(10.011));
+        assertFalse(BankAccount.isAmountValid(-10.0));
+        assertFalse(BankAccount.isAmountValid(-20.00));
+        assertFalse(BankAccount.isAmountValid(-30));
     }
 
     @Test
